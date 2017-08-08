@@ -51,4 +51,4 @@ You will still need request an an in your view controller.
 [self.adView loadAd:@"test_ad_placement_id" forSize:CGSizeMake(320, 50)];
 ```
 
-`self.adView` should be an IBOutlet pointing to the view in your interface.
+If using the interface builder `self.adView` should be an `IBOutlet` pointing to the view in your interface.
