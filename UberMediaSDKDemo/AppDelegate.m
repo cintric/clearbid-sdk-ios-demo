@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <UberMedia/UberMedia.h>
 
 @interface AppDelegate ()
 
@@ -16,6 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // Always initalize the ubermedia sdk before requesting advertisements.
+    [UberMedia initWithSDKKey:@"YOUR_SDK_KEY_HERE" andSecret:@"YOUR_SECRET_KEY_HERE"];
+    
     // Override point for customization after application launch.
     return YES;
 }
