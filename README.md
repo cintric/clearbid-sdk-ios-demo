@@ -1,6 +1,6 @@
 # Demo app for the UberMedia Header Bidding SDK (v0.1.5)
 
-To integrate the sdk drag and drop the UberMedia.bundle and UberMedia.framework files into your project.
+To integrate the sdk drag and drop the `UberMedia.bundle` and `UberMedia.framework` files into your project.
 
 In your application delegate initalize the sdk:
 ```objective-c
@@ -29,3 +29,11 @@ To display a banner ad, initalize the UMAdView class like so:
     // The ad will default to a 30 second refresh rate, you can use this method to change the refresh rate. Set to 0 to disable refreshing.
     [self.adView changeAdRefreshRate:60];
 ```
+
+You can also use the storyboard or a nib by setting your view class to UMAdView in the interface builder.
+You will still need request an an in your view controller.
+```objective-c
+[self.adView loadAd:@"test_ad_placement_id" forSize:CGSizeMake(320, 50)];
+```
+
+`self.adView` should be an IBOutlet pointing to the view in your interface.
