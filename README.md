@@ -20,7 +20,7 @@ Put in your own sdk key and secret here.
 
 ### Configure your project
 
-It is very critical to enable arbitrary loads in your `Info.plist` file. This is because advertisements pull content from websites that are not using ssl. To do so right click on your `Info.plist` file and select `Open As > Source Code` and paste this below the line that says `<key>NSAppTransportSecurity</key>`:
+It is very critical to enable arbitrary loads in your `Info.plist` file. This is because advertisements pull content from websites that are not using ssl. To do so right click on your `Info.plist` file and select `Open As > Source Code` and paste this directly below the line that says `<dict>` (usually line 4):
 
 ```xml
 <key>NSAppTransportSecurity</key>
