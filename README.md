@@ -46,7 +46,7 @@ To display a banner ad, initalize the UMAdView class like so:
 ```
 
 Optionally, you can also use the storyboard or a nib by setting your view class to `UMAdView` in the interface builder.
-You will still need request an an in your view controller.
+You will still need request an ad in your view controller.
 ```objective-c
 [self.adView loadAd:@"test_ad_placement_id" forSize:CGSizeMake(320, 50)];
 ```
