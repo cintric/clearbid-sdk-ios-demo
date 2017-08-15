@@ -1,4 +1,4 @@
-# Demo app for the UberMedia Header Bidding SDK (v0.1.5)
+# Demo app for the UberMedia Header Bidding SDK (v0.1.6)
 
 The UberMedia Header Bidding SDK for iOS allows you to optimize ad revenue by creating an open auction for your ad space instead of using the traditional waterfall method like other mediation SDKs. It is lightweight and optimized to minimize impact on your application.
 
@@ -52,3 +52,32 @@ You will still need request an ad in your view controller.
 ```
 
 If using the interface builder `self.adView` should be an `IBOutlet` pointing to the view in your interface.
+
+### (Optional) Delegate Methods
+
+You can implement delegate methods via the `UMAdViewDelegate` protocol.
+
+```objective-c
+#pragma mark - UMAdViewDelegate methods
+
+- (void)adViewDidLoadAd:(UMAdView *)view
+{
+    NSLog(@"UM Ad view did load %@", view);
+}
+
+- (void)adViewDidFailToLoadAd:(UMAdView *)view withMessage:(NSString *)message
+{
+    NSLog(@"UM Ad view failed to load %@ with message %@", view, message);
+}
+
+- (void)willLeaveApplicationFromAd:(UMAdView *)view
+{
+    NSLog(@"Will leave application from ad %@", view);
+}
+```
+
+### (Optional) Adapters
+
+To use the SDK with other mediation platforms will require adapters. Included in the [Adapters folder](https://github.com/cintric/ubermedia-sdk-ios-demo/tree/master/Adapters) is the adapter class for the google admob sdk (also compatible with Google's Double Click for Publishers.)
+
+Just include the adapter in your project and set up a mediation layer in the console to invoke the custom class named `UMAdMobCustomEventBanner`. Set the server paramater to your ubermedia placement ID. For testing you can use `test_ad_placement_id`. 
