@@ -51,13 +51,11 @@ static NSString *const customEventErrorDomain = @"com.google.CustomEvent";
                   label:(NSString *)serverLabel
                 request:(GADCustomEventRequest *)request {
     
-    NSLog(@"%f, %f, %@, %@, %@", adSize.size.width, adSize.size.height, serverParameter, serverLabel, request);
-    
     self.bannerAd = [[UMAdView alloc] initWithFrame:CGRectMake(0, 0, adSize.size.width, adSize.size.height)];
     self.bannerAd.delegate = self;
     
     [self.bannerAd changeAdRefreshRate:0];
-    [self.bannerAd loadAd:@"test_ad_placement_id" forSize:adSize.size];
+    [self.bannerAd loadAd:serverParameter forSize:adSize.size];
 }
 
 #pragma mark UMAdView delegate implementation
