@@ -1,4 +1,4 @@
-# Demo app for the UberMedia Header Bidding SDK (v0.1.6)
+# Demo app for the UberMedia Header Bidding SDK (v0.1.7)
 
 The UberMedia Header Bidding SDK for iOS allows you to optimize ad revenue by creating an open auction for your ad space instead of using the traditional waterfall method like other mediation SDKs. It is lightweight and optimized to minimize impact on your application.
 

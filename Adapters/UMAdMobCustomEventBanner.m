@@ -51,6 +51,8 @@ static NSString *const customEventErrorDomain = @"com.google.CustomEvent";
                   label:(NSString *)serverLabel
                 request:(GADCustomEventRequest *)request {
     
+    NSLog(@"[UberMedia] Using adUnitId from Google server param: %@", serverParameter);
+    
     self.bannerAd = [[UMAdView alloc] initWithFrame:CGRectMake(0, 0, adSize.size.width, adSize.size.height)];
     self.bannerAd.delegate = self;
     
@@ -69,7 +71,7 @@ static NSString *const customEventErrorDomain = @"com.google.CustomEvent";
 
 - (void)adViewDidFailToLoadAd:(UMAdView *)view withMessage:(NSString *)message
 {
-    NSError *error = [NSError errorWithDomain:customEventErrorDomain code:0 userInfo:@{@"message": message}];
+    NSError *error = [NSError errorWithDomain:customEventErrorDomain code:0 userInfo:@{}];
     [self.delegate customEventBanner:self didFailAd:error];
 }
 
