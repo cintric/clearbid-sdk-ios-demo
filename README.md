@@ -29,6 +29,7 @@ It is very critical to enable arbitrary loads in your `Info.plist` file. This is
 	<true/>
 </dict>
 ```
+**Important:** Do not include the `NSAllowsArbitraryLoadsInWebContent` (Allow Arbitrary Loads in Web Content) key or it will potneitally override `NSAllowsArbitraryLoads` and break critical functionality. If this is a problem the SDK should log a warning.
 
 ### Displaying an ad.
 To display a banner ad, initalize the UMAdView class like so:
