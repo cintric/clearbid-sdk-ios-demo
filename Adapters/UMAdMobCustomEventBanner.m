@@ -26,13 +26,6 @@ static NSString *const customEventErrorDomain = @"com.google.CustomEvent";
 
 @synthesize delegate;
 
-- (id)init
-{
-    self = [super init];
-    NSLog(@"initializing UMAdMobCUstomeEventBanner");
-    return self;
-}
-
 #pragma mark GADCustomEventBanner implementation
 
 - (void)requestBannerAd:(GADAdSize)adSize
@@ -50,8 +43,6 @@ static NSString *const customEventErrorDomain = @"com.google.CustomEvent";
 }
 
 #pragma mark UMAdView delegate implementation
-
-#pragma mark - UMAdViewDelegate methods
 
 - (void)adViewDidLoadAd:(UMAdView *)view
 {

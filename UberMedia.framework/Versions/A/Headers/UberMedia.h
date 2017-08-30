@@ -45,4 +45,32 @@ FOUNDATION_EXPORT const unsigned char UberMediaVersionString[];
  */
 + (void)initWithSDKKey:(NSString *)sdkKey andSecret:(NSString *)secret;
 
+/**
+ Call this method to pre-cache an ad (usually in your app delegate or primary view controller).
+
+ @param adUnitId Your UberMedia ad unit id. Use test_ad_placement_id to get test ads.
+ @param size The size of your desired banner ad.
+ */
++ (void)preCacheAd:(NSString *)adUnitId forSize:(CGSize)size;
+
+
+/**
+ If you precache an ad you can pass targeting parameters in with ad requests to DFP (or other exchanges) for targeted line items.
+ These parameters should be included with your DFP request when using line items with preset price bands.
+
+ @param adUnitId Your UberMedia ad unit id associated with a precached ad.
+ @return Dictionary of all key value targeting parameters.
+ */
++ (NSDictionary *)getTargetingParametersForAd:(NSString *)adUnitId;
+
+
+/**
+ If you have precached an ad this will return it an ad view ready for display. It will also immediately cache another ad.
+
+ @param adUnitId Your UberMedia ad unit id associated with a precached ad.
+ @param adSize The size of your banner ad.
+ @return Ad view ready for display.
+ */
++ (UMAdView *)getAdViewForCachedAd:(NSString *)adUnitId andSize:(CGSize)adSize;
+
 @end
