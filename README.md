@@ -35,7 +35,7 @@ It is very critical to enable arbitrary loads in your `Info.plist` file. This is
 ```
 **Important:** Do not include the `NSAllowsArbitraryLoadsInWebContent` (Allow Arbitrary Loads in Web Content) key or it will potneitally override `NSAllowsArbitraryLoads` and break critical functionality. If this is a problem the SDK should log a warning.
 
-### Displaying an ad.
+### Displaying an ad. (Skip this step if you're using an adapter)
 To display a banner ad, initalize the UMAdView class like so:
 ```objective-c
     CGRect frame = CGRectMake(0, [UIApplication sharedApplication].statusBarFrame.size.height, self.view.frame.size.width, 50);
