@@ -4,6 +4,7 @@ The UberMedia Header Bidding SDK for iOS allows you to optimize ad revenue by cr
 
 ### Initalize the sdk
 To integrate the sdk drag and drop the `UberMedia.framework` file into your project.
+Make sure it is included in your Embed Frameworks section of your target's Build Phases
 
 In your application delegate import the sdk:
 
@@ -33,7 +34,7 @@ It is very critical to enable arbitrary loads in your `Info.plist` file. This is
 	<true/>
 </dict>
 ```
-**Important:** Do not include the `NSAllowsArbitraryLoadsInWebContent` (Allow Arbitrary Loads in Web Content) key or it will potneitally override `NSAllowsArbitraryLoads` and break critical functionality. If this is a problem the SDK should log a warning.
+**Important:** Do not include the `NSAllowsArbitraryLoadsInWebContent` (Allow Arbitrary Loads in Web Content) key OR the `NSAllowsArbitraryLoadsForMedia` key. Otherwise it will potneitally override `NSAllowsArbitraryLoads` and break critical functionality. If this is a problem the SDK should log a warning.
 
 ### Displaying an ad. (Skip this step if you're using an adapter)
 To display a banner ad, initalize the UMAdView class like so:
@@ -105,6 +106,7 @@ If you are using line item targeting for DFP then you will need to pre-cache you
 }
 ```
 
+### Using DFP for line item targeting
 When you request an ad from DFP you need to set the custom targeting like so:
 ```objective-c
 DFPRequest *request = [DFPRequest request];
@@ -114,3 +116,25 @@ request.customTargeting = [UberMedia getTargetingParametersForAd:@"test_ad_place
 ```
 
 Make sure to include the `UMDFPTargetingCustomEventBanner.h` and `UMDFPTargetingCustomEventBanner.m` files from the [Adapters folder](https://github.com/cintric/ubermedia-sdk-ios-demo/tree/master/Adapters) in your project.
+
+### Using MoPub for line item targeting
+
+When you request an ad from MoPub you need to set the custom targeting keywords like so:
+```objective-c
+// Make sure to change your ad placement id
+NSDictionary *keywords = [UberMedia getTargetingParametersForAd:@"test_ad_placement_id"];
+NSMutableString *keywordsString = [NSMutableString stringWithString:@""];
+for(id key in keywords) {
+    id value = [keywords objectForKey:key];
+    if (keywordsString.length) {
+        [keywordsString appendString:@","];
+    }
+    [keywordsString appendString:[NSString stringWithFormat:@"%@:%@", key, value]];
+}
+// adView should be an MPAdView
+self.adView.keywords = keywordsString;
+```
+
+Make sure to include the `MPUberMediaBannerCustomEvent.h` and `MPUberMediaBannerCustomEvent.m` files from the [Adapters folder](https://github.com/cintric/ubermedia-sdk-ios-demo/tree/master/Adapters) in your project.
+
+
