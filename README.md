@@ -4,7 +4,7 @@ The UberMedia Header Bidding SDK for iOS allows you to optimize ad revenue by cr
 
 ### Initalize the sdk
 To integrate the sdk drag and drop the `UberMedia.framework` file into your project.
-Make sure it is included in your Embed Frameworks section of your target's Build Phases
+Make sure it is included in your "Link Binary With Libraries" section of your target's Build Phases
 
 In your application delegate import the sdk:
 
