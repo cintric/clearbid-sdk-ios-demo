@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33B7C50B1F748BAB000ECC85 /* UberMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B7C50A1F748B8F000ECC85 /* UberMedia.framework */; };
+		330B27F51F9589FC007F7336 /* UberMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330B27F41F9589FA007F7336 /* UberMedia.framework */; };
 		33E8CAB51F39232E00015D3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E8CAB41F39232E00015D3D /* main.m */; };
 		33E8CAB81F39232E00015D3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E8CAB71F39232E00015D3D /* AppDelegate.m */; };
 		33E8CABB1F39232E00015D3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E8CABA1F39232E00015D3D /* ViewController.m */; };
@@ -17,7 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		33B7C50A1F748B8F000ECC85 /* UberMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UberMedia.framework; sourceTree = "<group>"; };
+		330B27F21F9589F2007F7336 /* UberMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberMedia.framework; path = ../../Desktop/UberMedia.framework; sourceTree = "<group>"; };
+		330B27F41F9589FA007F7336 /* UberMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UberMedia.framework; sourceTree = "<group>"; };
 		33E8CAB01F39232E00015D3D /* UberMediaSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberMediaSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33E8CAB41F39232E00015D3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		33E8CAB61F39232E00015D3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -35,19 +36,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33B7C50B1F748BAB000ECC85 /* UberMedia.framework in Frameworks */,
+				330B27F51F9589FC007F7336 /* UberMedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		330B27F01F9589A6007F7336 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				330B27F21F9589F2007F7336 /* UberMedia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		33E8CAA71F39232E00015D3D = {
 			isa = PBXGroup;
 			children = (
-				33B7C50A1F748B8F000ECC85 /* UberMedia.framework */,
+				330B27F41F9589FA007F7336 /* UberMedia.framework */,
 				33E8CAB21F39232E00015D3D /* UberMediaSDKDemo */,
 				33E8CAB11F39232E00015D3D /* Products */,
+				330B27F01F9589A6007F7336 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
