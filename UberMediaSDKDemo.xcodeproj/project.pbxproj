@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		330B27F51F9589FC007F7336 /* UberMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330B27F41F9589FA007F7336 /* UberMedia.framework */; };
+		338CF7B41FA2827600FBBAA9 /* UberMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 338CF7B31FA2826C00FBBAA9 /* UberMedia.framework */; };
 		33E8CAB51F39232E00015D3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E8CAB41F39232E00015D3D /* main.m */; };
 		33E8CAB81F39232E00015D3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E8CAB71F39232E00015D3D /* AppDelegate.m */; };
 		33E8CABB1F39232E00015D3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E8CABA1F39232E00015D3D /* ViewController.m */; };
@@ -18,7 +18,7 @@
 
 /* Begin PBXFileReference section */
 		330B27F21F9589F2007F7336 /* UberMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberMedia.framework; path = ../../Desktop/UberMedia.framework; sourceTree = "<group>"; };
-		330B27F41F9589FA007F7336 /* UberMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UberMedia.framework; sourceTree = "<group>"; };
+		338CF7B31FA2826C00FBBAA9 /* UberMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UberMedia.framework; sourceTree = "<group>"; };
 		33E8CAB01F39232E00015D3D /* UberMediaSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberMediaSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33E8CAB41F39232E00015D3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		33E8CAB61F39232E00015D3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -36,7 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				330B27F51F9589FC007F7336 /* UberMedia.framework in Frameworks */,
+				338CF7B41FA2827600FBBAA9 /* UberMedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,7 +54,7 @@
 		33E8CAA71F39232E00015D3D = {
 			isa = PBXGroup;
 			children = (
-				330B27F41F9589FA007F7336 /* UberMedia.framework */,
+				338CF7B31FA2826C00FBBAA9 /* UberMedia.framework */,
 				33E8CAB21F39232E00015D3D /* UberMediaSDKDemo */,
 				33E8CAB11F39232E00015D3D /* Products */,
 				330B27F01F9589A6007F7336 /* Frameworks */,
