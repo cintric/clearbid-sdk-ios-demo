@@ -1,4 +1,4 @@
-# Demo app for the UberMedia Header Bidding SDK (v0.3.1)
+# Demo app for the UberMedia Header Bidding SDK (v0.3.2)
 
 The UberMedia Header Bidding SDK for iOS allows you to optimize ad revenue by creating an open auction for your ad space instead of using the traditional waterfall method like other mediation SDKs. It is lightweight and optimized to minimize impact on your application.
 
@@ -122,15 +122,8 @@ Make sure to include the `UMDFPTargetingCustomEventBanner.h` and `UMDFPTargeting
 When you request an ad from MoPub you need to set the custom targeting keywords like so:
 ```objective-c
 // Make sure to change your ad placement id
-NSDictionary *keywords = [UberMedia getTargetingParametersForAd:@"test_ad_placement_id"];
-NSMutableString *keywordsString = [NSMutableString stringWithString:@""];
-for(id key in keywords) {
-    id value = [keywords objectForKey:key];
-    if (keywordsString.length) {
-        [keywordsString appendString:@","];
-    }
-    [keywordsString appendString:[NSString stringWithFormat:@"%@:%@", key, value]];
-}
+NSString *keywordsString = [UberMedia getTargetingParametersAsStringForAd:@"test_ad_placement_id"];
+
 // adView should be an MPAdView
 self.adView.keywords = keywordsString;
 ```
