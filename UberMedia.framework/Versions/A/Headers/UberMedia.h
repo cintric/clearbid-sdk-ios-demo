@@ -63,6 +63,13 @@ FOUNDATION_EXPORT const unsigned char UberMediaVersionString[];
  */
 + (NSDictionary *)getTargetingParametersForAd:(NSString *)adUnitId;
 
+/**
+ Same as getTargetingParemetersForAd but returns them as a string as form: "key1:value1,key2:value2". This is required for mopub.
+ 
+ @param adUnitId Your UberMedia ad unit id associated with a precached ad.
+ @return Dictionary of all key value targeting parameters.
+ */
++ (NSString *)getTargetingParametersAsStringForAd:(NSString *)adUnitId;
 
 /**
  If you have precached an ad this will return it an ad view ready for display. It will also immediately cache another ad.
