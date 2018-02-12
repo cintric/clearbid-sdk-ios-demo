@@ -23,6 +23,7 @@
 //------------------------------------------------
 
 #import <UberMedia/UMAdView.h>
+#import <UberMedia/CBInterstitialAdViewController.h>
 
 //------------------------------------------------
 // Cintric Class Interface
@@ -33,6 +34,8 @@ FOUNDATION_EXPORT double UberMediaVersionNumber;
 
 //! Project version string for UberMedia.
 FOUNDATION_EXPORT const unsigned char UberMediaVersionString[];
+
+@protocol UberMediaDelegate;
 
 @interface UberMedia : NSObject
 
@@ -46,12 +49,22 @@ FOUNDATION_EXPORT const unsigned char UberMediaVersionString[];
 + (void)initWithSDKKey:(NSString *)sdkKey andSecret:(NSString *)secret;
 
 /**
+ DEPRECATED: Use preCacheAd:forSize:interstitial:
  Call this method to pre-cache an ad (usually in your app delegate or primary view controller).
 
  @param adUnitId Your UberMedia ad unit id. Use test_ad_placement_id to get test ads.
  @param size The size of your desired banner ad.
  */
-+ (void)preCacheAd:(NSString *)adUnitId forSize:(CGSize)size;
++ (void)preCacheAd:(NSString *)adUnitId forSize:(CGSize)size __deprecated_msg("Use preCacheAd:forSize:interstitial: instead.");
+
+/**
+ Call this method to pre-cache an ad (usually in your app delegate or primary view controller).
+ 
+ @param adUnitId Your UberMedia ad unit id. Use test_ad_placement_id to get test ads.
+ @param size The size of your desired banner ad.
+ @pram isInterstitial Whether this is an interstitial ad or not
+ */
++ (void)preCacheAd:(NSString *)adUnitId forSize:(CGSize)size interstitial:(BOOL)isInterstitial;
 
 
 /**
@@ -79,5 +92,21 @@ FOUNDATION_EXPORT const unsigned char UberMediaVersionString[];
  @return Ad view ready for display.
  */
 + (UMAdView *)getAdViewForCachedAd:(NSString *)adUnitId andSize:(CGSize)adSize;
+
+
++ (CBInterstitialAdViewController *)getInterstitialForCachedAd:(NSString *)adUnitId andSize:(CGSize)adSize;
+
++ (BOOL)adIsCachedForAd:(NSString *)adUnitId andSize:(CGSize)adSize;
+
++ (void)setUberMediaDelegate:(id <UberMediaDelegate>)delegate;
+
+@end
+
+@protocol UberMediaDelegate <NSObject>
+
+@required
+@optional
+
+- (void)newAdIsCachedForId:(NSString *)adUnitId andSize:(CGSize)size;
 
 @end
