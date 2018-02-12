@@ -1,4 +1,4 @@
-# Demo app for the UberMedia Header Bidding SDK (v0.4.0)
+# Demo app for the UberMedia Header Bidding SDK (v0.5.2)
 
 The UberMedia Header Bidding SDK for iOS allows you to optimize ad revenue by creating an open auction for your ad space instead of using the traditional waterfall method like other mediation SDKs. It is lightweight and optimized to minimize impact on your application.
 
@@ -130,4 +130,32 @@ self.adView.keywords = keywordsString;
 
 Make sure to include the `MPUberMediaBannerCustomEvent.h` and `MPUberMediaBannerCustomEvent.m` files from the [Adapters folder](https://github.com/cintric/ubermedia-sdk-ios-demo/tree/master/Adapters) in your project.
 
+## Using MoPub auto refresh
+If you wan't to use mopub auto refresh then you will need to set your viewcontroller to be an `UberMediaDelegate` and set the keywords when receiving the newAdIsCachedForId callback.
+
+```objective-c
+- (void)viewDidLoad {
+    [super viewDidLoad];   
+    [UberMedia setUberMediaDelegate:self];
+}
+
+- (void)newAdIsCachedForId:(NSString *)adUnitId andSize:(CGSize)size {
+    if ([adUnitId isEqualToString:MY_CLEARBID_INTERSTITIAL_AD_ID]) {
+	mopubInterstitial.keywords = [UberMedia getTargetingParametersAsStringForAd:adUnitId];
+    if ([adUnitId isEqualToString:MY_CLEARBID_BANNER_AD_ID]) {
+        mopubBanner.keywords = [UberMedia getTargetingParametersAsStringForAd:adUnitId];
+    }
+}
+```
+
+# Interstitials
+Using interstitials with an adapter is almost identicial to using banners. You will need to cache your interstitial ad in the app delegate like so:
+
+```objective-c
+[UberMedia preCacheAd:MY_CLEARBID_INTERSTITIAL_AD_ID forSize:CGSizeMake(320, 480) interstitial:YES];
+```
+
+You will also need to set the targeting keywords either manually when requesting an ad or with the delegate method as can be seen above.
+
+Make sure to include the `ClearBidMPInterstitialCustomEvent.h` and `ClearBidMPInterstitialCustomEvent.m` files from the [Adapters folder](https://github.com/cintric/ubermedia-sdk-ios-demo/tree/master/Adapters) in your project.
 
