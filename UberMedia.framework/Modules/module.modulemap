@@ -1,0 +1,6 @@
+framework module UberMedia {
+  umbrella header "UberMedia.h"
+
+  export *
+  module * { export * }
+}
