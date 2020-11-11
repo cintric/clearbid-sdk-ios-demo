@@ -7,11 +7,11 @@
 //
 
 #import "ViewController.h"
-#import <UberMedia/UberMedia.h>
+#import <ClearBid/ClearBid.h>
 
 @interface ViewController ()
 
-@property (weak, nonatomic) UMAdView *adView;
+@property (weak, nonatomic) CBAdView *adView;
 
 @end
 
@@ -27,7 +27,7 @@
 - (void)setupAdView
 {
     CGRect frame = CGRectMake(0, [UIApplication sharedApplication].statusBarFrame.size.height, self.view.frame.size.width, 50);
-    UMAdView *adView = [[UMAdView alloc] initWithFrame:frame];
+    CBAdView *adView = [[CBAdView alloc] initWithFrame:frame];
     [self.view addSubview:adView];
     self.adView = adView;
     

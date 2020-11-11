@@ -10,9 +10,9 @@
 #if __has_include(<MoPub/MoPub.h>)
 #import <MoPub/MoPub.h>
 #else
-#import "MPBannerCustomEvent.h"
+#import "MPInlineAdAdapter.h"
 #endif
 
-@interface MPUberMediaBannerCustomEvent : MPBannerCustomEvent
+@interface MPUberMediaBannerCustomEvent : MPInlineAdAdapter
 
 @end

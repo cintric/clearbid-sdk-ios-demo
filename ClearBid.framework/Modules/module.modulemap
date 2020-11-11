@@ -1,0 +1,6 @@
+framework module ClearBid {
+  umbrella header "ClearBid.h"
+
+  export *
+  module * { export * }
+}

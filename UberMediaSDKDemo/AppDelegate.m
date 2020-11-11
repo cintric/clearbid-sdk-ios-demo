@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <UberMedia/UberMedia.h>
+#import <ClearBid/ClearBid.h>
 
 @interface AppDelegate ()
 
@@ -19,10 +19,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // Always initalize the ubermedia sdk before requesting advertisements.
-    [UberMedia initWithSDKKey:@"YOUR_SDK_KEY_HERE" andSecret:@"YOUR_SECRET_KEY_HERE"];
+    [ClearBid initWithSDKKey:@"YOUR_SDK_KEY_HERE" andSecret:@"YOUR_SECRET_KEY_HERE"];
     
     // If you're using custom targeting you will need to include this line:
-//    [UberMedia preCacheAd:@"placement_id" forSize:CGSizeMake(320, 50)];
+//    [ClearBid preCacheAd:@"placement_id" forSize:CGSizeMake(320, 50) interstitial:NO];
     
     // Override point for customization after application launch.
     return YES;

@@ -7,20 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		333A0ABA20C89B4800D78FC6 /* UberMedia.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 333A0AB820C89B4700D78FC6 /* UberMedia.bundle */; };
-		333A0ABB20C89B4800D78FC6 /* UberMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 333A0AB920C89B4800D78FC6 /* UberMedia.framework */; };
 		33E8CAB51F39232E00015D3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E8CAB41F39232E00015D3D /* main.m */; };
 		33E8CAB81F39232E00015D3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E8CAB71F39232E00015D3D /* AppDelegate.m */; };
 		33E8CABB1F39232E00015D3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E8CABA1F39232E00015D3D /* ViewController.m */; };
 		33E8CABE1F39232E00015D3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33E8CABC1F39232E00015D3D /* Main.storyboard */; };
 		33E8CAC01F39232E00015D3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33E8CABF1F39232E00015D3D /* Assets.xcassets */; };
 		33E8CAC31F39232E00015D3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33E8CAC11F39232E00015D3D /* LaunchScreen.storyboard */; };
+		63E5764625563A340020251C /* ClearBidResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 63E5764425563A340020251C /* ClearBidResources.bundle */; };
+		63E5764725563A340020251C /* ClearBid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E5764525563A340020251C /* ClearBid.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		330B27F21F9589F2007F7336 /* UberMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberMedia.framework; path = ../../Desktop/UberMedia.framework; sourceTree = "<group>"; };
-		333A0AB820C89B4700D78FC6 /* UberMedia.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UberMedia.bundle; sourceTree = "<group>"; };
-		333A0AB920C89B4800D78FC6 /* UberMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UberMedia.framework; sourceTree = "<group>"; };
 		33E8CAB01F39232E00015D3D /* UberMediaSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberMediaSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33E8CAB41F39232E00015D3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		33E8CAB61F39232E00015D3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -31,6 +29,8 @@
 		33E8CABF1F39232E00015D3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33E8CAC21F39232E00015D3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33E8CAC41F39232E00015D3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63E5764425563A340020251C /* ClearBidResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ClearBidResources.bundle; sourceTree = "<group>"; };
+		63E5764525563A340020251C /* ClearBid.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ClearBid.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				333A0ABB20C89B4800D78FC6 /* UberMedia.framework in Frameworks */,
+				63E5764725563A340020251C /* ClearBid.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,8 +56,8 @@
 		33E8CAA71F39232E00015D3D = {
 			isa = PBXGroup;
 			children = (
-				333A0AB820C89B4700D78FC6 /* UberMedia.bundle */,
-				333A0AB920C89B4800D78FC6 /* UberMedia.framework */,
+				63E5764525563A340020251C /* ClearBid.framework */,
+				63E5764425563A340020251C /* ClearBidResources.bundle */,
 				33E8CAB21F39232E00015D3D /* UberMediaSDKDemo */,
 				33E8CAB11F39232E00015D3D /* Products */,
 				330B27F01F9589A6007F7336 /* Frameworks */,
@@ -127,7 +127,7 @@
 				TargetAttributes = {
 					33E8CAAF1F39232E00015D3D = {
 						CreatedOnToolsVersion = 8.3.3;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -136,6 +136,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -156,7 +157,7 @@
 			files = (
 				33E8CAC31F39232E00015D3D /* LaunchScreen.storyboard in Resources */,
 				33E8CAC01F39232E00015D3D /* Assets.xcassets in Resources */,
-				333A0ABA20C89B4800D78FC6 /* UberMedia.bundle in Resources */,
+				63E5764625563A340020251C /* ClearBidResources.bundle in Resources */,
 				33E8CABE1F39232E00015D3D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,8 +305,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -324,8 +326,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

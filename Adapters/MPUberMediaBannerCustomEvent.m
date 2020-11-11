@@ -7,35 +7,36 @@
 //
 
 #import "MPUberMediaBannerCustomEvent.h"
-#import <UberMedia/UberMedia.h>
+#import <ClearBid/ClearBid.h>
 
-@interface MPUberMediaBannerCustomEvent () <UMAdViewDelegate>
+@interface MPUberMediaBannerCustomEvent () <CBAdViewDelegate>
 
-@property(nonatomic, strong) UMAdView *bannerAd;
+@property(nonatomic, strong) CBAdView *bannerAd;
 
 @end
 
 @implementation MPUberMediaBannerCustomEvent
 
-@synthesize delegate;
+- (void)requestAdWithSize:(CGSize)size customEventInfo:(NSDictionary *)info {
+    [self requestAdWithSize:size adapterInfo:info adMarkup:nil];
+}
 
-- (void)requestAdWithSize:(CGSize)size customEventInfo:(NSDictionary *)info
+- (void)requestAdWithSize:(CGSize)size adapterInfo:(NSDictionary *)info adMarkup:(NSString * _Nullable)adMarkup;
 {
-    NSLog(@"[UberMedia] Using MoPub adapter custom event info: %@ and size %dx%d", info, (int)size.width, (int)size.height);
+    NSLog(@"[ClearBid] Using MoPub adapter custom event info: %@ and size %dx%d", info, (int)size.width, (int)size.height);
     
-    self.bannerAd = [UberMedia getAdViewForCachedAd:[info objectForKey:@"ad_unit_id"] andSize:size];
+    self.bannerAd = [ClearBid getAdViewForCachedAd:[info objectForKey:@"ad_unit_id"] andSize:size];
     self.bannerAd.frame = CGRectMake(0, 0, size.width, size.height);
-    
     self.bannerAd.delegate = self;
     
     if (self.bannerAd) {
-        [self.delegate bannerCustomEvent:self didLoadAd:self.bannerAd];
+        [self.delegate inlineAdAdapter:self didLoadAdWithAdView:self.bannerAd];
     } else {
-        [self.delegate bannerCustomEvent:self didFailToLoadAdWithError:nil];
+        [self.delegate inlineAdAdapter:self didFailToLoadAdWithError:nil];
     }
 }
 
-- (void)willLeaveApplicationFromAd:(UMAdView *)view
+- (void)willLeaveApplicationFromAd:(CBAdView *)view
 {
     [self.delegate bannerCustomEventWillLeaveApplication:self];
 }
